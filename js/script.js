@@ -20,10 +20,7 @@ function loadData() {
         var greetingTxt = '<h2 id="greeting" class="greeting">So you want to live in ' + loc + '?</h2>'; //ftiaxnw to neo html h2 node
         $greeting.replaceWith(greetingTxt);                 //replaceWith jQuery function
 
-        //deyterh me8odos gia to replacement:
-        //$greeting.text(greetingTxt);             //telika to text() mporei na kanei automata ta replacements, dinontas ws argument to kainourio value!!!
-
-        var url = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location='+ loc +''; //opws sthn PHP, gia na balw metablhth sto string, to concatenation edw einai +
+        var url = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location='+ loc +''; 
         var image = '<img class="bgimg" src="' + url + '">';
         $("body").append(image);
 
@@ -43,7 +40,7 @@ function loadData() {
         }).error( function(){                   //thn kollaw sthn $.getJSON kai an kati den paei kala, paizei, alliws agnoeitai///////////////PAIZEI TO IDIO KAI H .fail()/////////
             $nytHeaderElem.text("New York Times articles could not be loaded!");
         });
-       ////////////////////////EDW EIMAI wikipedia-headerhttps://www.mediawiki.org/wiki/API:Search_and_discovery//////////////////// 
+       //////////////////////// wikipedia-headerhttps://www.mediawiki.org/wiki/API:Search_and_discovery//////////////////// 
        var wikiRequestTimeout = setTimeout(function(){       //error handling gia jsonp, an arghsei polu na ektelestei,ara kati den paei kala, tote tupwnw mhnuma
            $("#wikipedia-header").text('Error with the Wikipedia request.'); 
         }, 8000);
